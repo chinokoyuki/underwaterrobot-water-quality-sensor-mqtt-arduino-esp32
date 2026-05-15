@@ -2,156 +2,263 @@
 #include <PubSubClient.h>
 #include <WiFi.h>
 
-#define deviceId         "69632991c00ccb6d4b32b204_ABX00083_CN_1"
-#define deviceSecret     "Takanashi0721"
+/* ========== 华为云 IoTDA 设备配置 ========== */
+#define DEVICE_ID         "69632991c00ccb6d4b32b204_ABX00083_CN_1"
+#define DEVICE_SECRET     "Takanashi0721"
 
-
-/* 连接WIFI SSID和密码 */
+/* ========== WiFi 配置 ========== */
 #define WIFI_SSID         "HUAWEI Pura 70 Pro"
 #define WIFI_PASSWD       "200509240721"
 
-
-/* 线上环境域名和端口号，不需要改 */
-
-//华为云地址
+/* ========== 华为云 MQTT 连接参数 ========== */
 #define MQTT_SERVER       "cbd1b71b46.st1.iotda-device.cn-south-1.myhuaweicloud.com"
 #define MQTT_PORT         1883
-#define MQTT_USERNAME      "69632991c00ccb6d4b32b204_ABX00083_CN_1"
-
-
-//硬件的ID和密码
+#define MQTT_USERNAME     "69632991c00ccb6d4b32b204_ABX00083_CN_1"
 #define CLIENT_ID         "69632991c00ccb6d4b32b204_ABX00083_CN_1_0_0_2026011206"
 #define MQTT_PASSWD       "8c834a00f2633ce36a07455f812ef84a3171955848ceda2534b899f8b9736e1e"
 
+/* ========== MQTT Topic 和 Payload 格式 ========== */
+// 属性上报 Topic（设备 -> 平台）
+#define ALINK_TOPIC_PROP_POST     "$oc/devices/" DEVICE_ID "/sys/properties/report"
+// 属性设置响应 Topic（设备 -> 平台，响应平台下发命令）
+#define ALINK_TOPIC_PROP_SET      "$oc/devices/" DEVICE_ID "/sys/properties/set"
+// 命令下发 Topic（平台 -> 设备）
+#define ALINK_TOPIC_COMMAND       "$oc/devices/" DEVICE_ID /sys/commands/#
+// 属性上报 Payload 模板（华为云 IoTDA 标准格式）
+// service_id 对应华为云控制台创建的"服务"标识
+#define ALINK_BODY_FORMAT         "{\"services\":[{\"service_id\":\"water_quality\",\"properties\":%s}]}"
 
-//硬件发送消息的格式
-#define ALINK_BODY_FORMAT         "{\"services\":[{\"service_id\":\"TEST\",\"properties\":%s}]}"
-#define ALINK_TOPIC_PROP_POST     "$oc/devices/{" deviceId"/sys/properties/report"
+/* ========== 上报周期配置 ========== */
+#define UPLOAD_INTERVAL_MS  5000   // 数据上报间隔（毫秒）
+#define SENSOR_INTERVAL_MS  2000   // 传感器采集间隔（毫秒）
 
+/* ========== 全局对象 ========== */
 WaterQualitySensor waterSensor;
+WiFiClient espClient;
+PubSubClient client(espClient);
 
-bool ledState = false;
+/* ========== 全局变量 ========== */
+unsigned long lastUploadTime = 0;    // 上次上报时间
+unsigned long lastSensorTime = 0;    // 上次采集时间
+bool mqttConnected = false;          // MQTT 连接状态
 
-unsigned long lastMs = 0;
+/* ========== 传感器数据缓存 ========== */
+struct SensorData {
+    float ph;              // pH 值
+    float tds;             // TDS (ppm)
+    int   turbidity;       // 浊度 (ADC 原始值)
+    float ammonia;         // 氨氮 (mg/L)
+    float temperature;     // 水温 (℃)
+    float depth;           // 深度 (m)
+    float depthPressure;   // 深度传感器压力 (mbar)
+    float depthTemp;       // 深度传感器内部温度 (℃)
+    bool  isNormal;        // 水质是否正常
+    bool  depthSensorOk;   // 深度传感器是否在线
+};
 
-// 用于连接WiFi
- WiFiClient espClient;
-// 用于连接华为的mqtt服务器
- PubSubClient  client(espClient);
+SensorData sensorData;
 
-
-//储存数据
-float data = 0;
-
-//连接wifi
+/* ========== WiFi 初始化 ========== */
 void wifiInit()
 {
+    Serial.println("[WiFi] 正在连接...");
     WiFiClass::mode(WIFI_STA);
     WiFi.begin(WIFI_SSID, WIFI_PASSWD);
+
+    int retryCount = 0;
     while (WiFiClass::status() != WL_CONNECTED)
     {
         delay(1000);
-        Serial.println("WiFi not Connect");
+        retryCount++;
+        Serial.print(".");
+        if (retryCount > 30) {
+            Serial.println("\n[WiFi] 连接超时，重启设备...");
+            ESP.restart();
+        }
     }
-    Serial.println("WiFi is Connected");
-    client.setServer(MQTT_SERVER, MQTT_PORT);   /* 连接WiFi之后，连接MQTT服务器 */
+
+    Serial.println();
+    Serial.print("[WiFi] 连接成功，IP地址: ");
+    Serial.println(WiFi.localIP());
+
+    // 连接 WiFi 之后，设置 MQTT 服务器
+    client.setServer(MQTT_SERVER, MQTT_PORT);
 }
 
-//保持mqtt连接
+/* ========== MQTT 连接维持 ========== */
 void mqttCheckConnect()
 {
-    while (!client.connected())
-    {
-        client.connect(CLIENT_ID, MQTT_USERNAME, MQTT_PASSWD);
+    if (client.connected()) {
+        mqttConnected = true;
+        return;
+    }
+
+    Serial.println("[MQTT] 正在连接华为云 IoTDA...");
+    mqttConnected = false;
+
+    // 尝试连接
+    if (client.connect(CLIENT_ID, MQTT_USERNAME, MQTT_PASSWD)) {
+        mqttConnected = true;
+        Serial.println("[MQTT] 连接成功！");
+    } else {
+        Serial.print("[MQTT] 连接失败，状态码: ");
+        Serial.println(client.state());
     }
 }
 
-//上报数据到华为云
+/* ========== MQTT 消息回调（接收平台下发命令） ========== */
+void mqttCallback(char* topic, byte* payload, unsigned int length)
+{
+    Serial.print("[MQTT] 收到消息，Topic: ");
+    Serial.println(topic);
+
+    char msg[length + 1];
+    memcpy(msg, payload, length);
+    msg[length] = '\0';
+    Serial.print("[MQTT] 消息内容: ");
+    Serial.println(msg);
+
+    // TODO: 可在此处解析平台下发的属性设置或命令，执行相应操作
+}
+
+/* ========== 传感器数据采集 ========== */
+void readSensorData()
+{
+    sensorData.ph           = waterSensor.readPH();
+    sensorData.tds          = waterSensor.readTDS();
+    sensorData.turbidity    = waterSensor.readTurbidity();
+    sensorData.ammonia      = waterSensor.readAmmoniaNitrogen();
+    sensorData.temperature  = waterSensor.readTemperature();
+    sensorData.depth        = waterSensor.readDepth();
+    sensorData.depthPressure    = waterSensor.readDepthPressure();
+    sensorData.depthTemp        = waterSensor.readDepthTemperature();
+    sensorData.depthSensorOk    = waterSensor.isDepthSensorConnected();
+
+    // 水质状态判断
+    sensorData.isNormal = waterSensor.isWaterQualityNormal(
+        sensorData.ph, sensorData.tds, sensorData.ammonia, sensorData.depth);
+
+    // 报警控制
+    if (!sensorData.isNormal) {
+        waterSensor.triggerAlarm();
+    } else {
+        waterSensor.stopAlarm();
+    }
+}
+
+/* ========== 数据上报到华为云 ========== */
 void mqttIntervalPost()
 {
-  // 生成0~1024之间步长为0.01的随机值
-  long randomInt = random(0, 102401);  // 生成0~102400的整数
-  float data = randomInt / 100.0;      // 转换为步长0.01的浮点值（0.00~1024.00）
+    if (!mqttConnected) {
+        Serial.println("[MQTT] 未连接，跳过上报");
+        return;
+    }
 
-  char properties[64];  // 扩容以容纳新增的LED属性
-  char jsonBuf[128];
+    // 构建属性 JSON
+    // 华为云 IoTDA 属性名建议使用驼峰命名，与物模型定义一致
+    char properties[256];
+    snprintf(properties, sizeof(properties),
+        "{\"pH\":%.2f,\"TDS\":%.1f,\"turbidity\":%d,\"ammoniaNitrogen\":%.2f,\"waterTemp\":%.1f,\"depth\":%.2f,\"depthPressure\":%.1f,\"depthSensorTemp\":%.1f,\"waterQualityNormal\":%s,\"depthSensorOnline\":%s}",
+        sensorData.ph,
+        sensorData.tds,
+        sensorData.turbidity,
+        sensorData.ammonia,
+        sensorData.temperature,
+        sensorData.depth,
+        sensorData.depthPressure,
+        sensorData.depthTemp,
+        sensorData.isNormal ? "true" : "false",
+        sensorData.depthSensorOk ? "true" : "false"
+    );
 
-  // 上报数据：拼接包含number和ledStatus的合规JSON
-  sprintf(properties, "{\"Number\":%.2f,\"LED_Power\":%s}", data, ledState ? "true" : "false");
-  sprintf(jsonBuf, ALINK_BODY_FORMAT, properties);
+    // 组装完整 Payload
+    char jsonBuf[384];
+    snprintf(jsonBuf, sizeof(jsonBuf), ALINK_BODY_FORMAT, properties);
 
-  // 启用MQTT实际上报，获取上报结果
-  boolean publishResult = client.publish(ALINK_TOPIC_PROP_POST, jsonBuf);
+    // 发布消息
+    boolean publishResult = client.publish(ALINK_TOPIC_PROP_POST, jsonBuf);
 
-  // 串口打印调试信息
-  Serial.println("------------------------");
-  Serial.print("number = ");
-  Serial.println(data);
-  Serial.print("LED状态 = ");
-  Serial.println(ledState ? "开启(true)" : "关闭(false)");
-  Serial.print("MQTT上报结果:");
-  Serial.println(publishResult ? "成功" : "失败");
+    // 串口调试输出
+    Serial.println("========== MQTT 数据上报 ==========");
+    Serial.print("  pH值:       "); Serial.println(sensorData.ph, 2);
+    Serial.print("  TDS:        "); Serial.println(sensorData.tds, 1);
+    Serial.print("  浊度(ADC):  "); Serial.println(sensorData.turbidity);
+    Serial.print("  氨氮:       "); Serial.println(sensorData.ammonia, 2);
+    Serial.print("  水温:       "); Serial.println(sensorData.temperature, 1);
+    Serial.print("  深度:       "); Serial.println(sensorData.depth, 2);
+    Serial.print("  深度压力:   "); Serial.println(sensorData.depthPressure, 1);
+    Serial.print("  深度温度:   "); Serial.println(sensorData.depthTemp, 1);
+    Serial.print("  水质状态:   "); Serial.println(sensorData.isNormal ? "正常" : "超标报警");
+    Serial.print("  深度传感器: "); Serial.println(sensorData.depthSensorOk ? "在线" : "离线");
+    Serial.print("  上报结果:   "); Serial.println(publishResult ? "成功" : "失败");
+    Serial.println("===================================");
 }
 
+/* ========== 串口数据输出（表格格式） ========== */
+void serialPrintData()
+{
+    Serial.print(sensorData.ph, 2);
+    Serial.print("\t");
+    Serial.print(sensorData.tds, 1);
+    Serial.print("\t\t");
+    Serial.print(sensorData.turbidity);
+    Serial.print("\t\t");
+    Serial.print(sensorData.ammonia, 2);
+    Serial.print("\t\t");
+    Serial.print(sensorData.temperature, 1);
+    Serial.print("\t\t");
+    Serial.print(sensorData.depth, 2);
+    Serial.print("\t");
+    Serial.println(sensorData.isNormal ? "正常" : "超标报警");
+}
 
+/* ========== setup ========== */
 void setup() {
-    // COM 115200
+    // 串口初始化
     Serial.begin(115200);
     while (!Serial) {
-        delay(10); // standby
+        delay(10);
     }
+
     // 初始化传感器
     waterSensor.begin();
-    // 输出数据检查
+
+    // 连接 WiFi 和 MQTT
+    wifiInit();
+
+    // 设置 MQTT 消息回调
+    client.setCallback(mqttCallback);
+
+    // 初始连接 MQTT
+    mqttCheckConnect();
+
+    // 输出表头
     Serial.println("水质监测系统初始化完成");
     Serial.println("pH值\tTDS值(ppm)\t浊度(ADC)\t氨氮(mg/L)\t水温(℃)\t深度(m)\t状态");
 }
 
+/* ========== loop ========== */
 void loop() {
-    waterSensor.enableSensor();
+    unsigned long now = millis();
 
-    // 读取数据
-    float phValue = waterSensor.readPH();
-    float tdsValue = waterSensor.readTDS();
-    int turbidityValue = waterSensor.readTurbidity();
-    float ammoniaValue = waterSensor.readAmmoniaNitrogen();
-    float tempValue = waterSensor.readTemperature();
-    float depthValue = waterSensor.readDepth();  // 新增：深度传感器
+    // 传感器数据采集（每 SENSOR_INTERVAL_MS 毫秒）
+    if (now - lastSensorTime >= SENSOR_INTERVAL_MS) {
+        lastSensorTime = now;
 
-    // 水质状态判断与报警（新增深度参数）
-    bool isNormal = waterSensor.isWaterQualityNormal(phValue, tdsValue, ammoniaValue, depthValue);
-    if (!isNormal) {
-        waterSensor.triggerAlarm(); // 超标触发报警
-    } else {
-        waterSensor.stopAlarm(); // 正常关闭报警
+        waterSensor.enableSensor();
+        readSensorData();
+        serialPrintData();
     }
 
-    // 串口输出数据（新增深度列）
-    Serial.print(phValue, 2);
-    Serial.print("\t");
-    Serial.print(tdsValue, 1);
-    Serial.print("\t\t");
-    Serial.print(turbidityValue);
-    Serial.print("\t\t");
-    Serial.print(ammoniaValue, 2);
-    Serial.print("\t\t");
-    Serial.print(tempValue, 1);
-    Serial.print("\t\t");
-    Serial.print(depthValue, 2);
-    Serial.print("\t");
-    Serial.println(isNormal ? "正常" : "超标报警");
+    // MQTT 连接维持（持续检查）
+    mqttCheckConnect();
 
-    //保持设备在线
-    if (millis() - lastMs >= 5000)
-    {
-        lastMs = millis();
-       mqttCheckConnect();
+    // 数据上报（每 UPLOAD_INTERVAL_MS 毫秒）
+    if (now - lastUploadTime >= UPLOAD_INTERVAL_MS) {
+        lastUploadTime = now;
+        mqttIntervalPost();
     }
 
-
-    // 上报
-    mqttIntervalPost();
-
+    // 处理 MQTT 消息
     client.loop();
-    delay(2000);
 }

@@ -1,6 +1,6 @@
 # ESP32 水质传感器系统使用说明手册
 
-> 版本：V2.0（含深度传感器）
+> 版本：V3.0（完善 MQTT 华为云数据上报）
 > 更新日期：2026-05-15
 > 硬件平台：Arduino Nano ESP32
 
@@ -304,34 +304,105 @@ pH值\tTDS值(ppm)\t浊度(ADC)\t氨氮(mg/L)\t水温(℃)\t深度(m)\t状态
 在 `main.cpp` 中修改以下参数以适配你的华为云实例：
 
 ```cpp
+/* 华为云 IoTDA 设备配置 */
+#define DEVICE_ID         "你的设备ID"
+#define DEVICE_SECRET     "你的设备密钥"
+
+/* WiFi 配置 */
 #define WIFI_SSID         "你的WiFi名称"
 #define WIFI_PASSWD       "你的WiFi密码"
+
+/* 华为云 MQTT 连接参数 */
 #define MQTT_SERVER       "你的华为云MQTT地址"
 #define MQTT_PORT         1883
-#define CLIENT_ID         "你的设备ID"
-#define MQTT_USERNAME     "你的用户名"
-#define MQTT_PASSWD       "你的密码"
+#define MQTT_USERNAME     "你的MQTT用户名（通常与DEVICE_ID相同）"
+#define CLIENT_ID         "你的客户端ID"
+#define MQTT_PASSWD       "你的MQTT密码"
 ```
 
+> 💡 MQTT 密码需要通过华为云提供的生成工具或算法计算，详见 `doc/MQTT华为云对接手册.md`。
+
 ### 7.2 数据上报格式
+
+设备使用华为云 IoTDA 标准属性上报格式，将所有传感器数据封装为 JSON 上报。
+
+#### 上报 Topic
+
+```
+$oc/devices/{device_id}/sys/properties/report
+```
+
+#### 上报 Payload
 
 ```json
 {
   "services": [{
-    "service_id": "TEST",
+    "service_id": "water_quality",
     "properties": {
-      "Number": 123.45,
-      "LED_Power": true
+      "pH": 7.15,
+      "TDS": 189.3,
+      "turbidity": 856,
+      "ammoniaNitrogen": 2.45,
+      "waterTemp": 24.8,
+      "depth": 0.32,
+      "depthPressure": 1013.5,
+      "depthSensorTemp": 24.5,
+      "waterQualityNormal": true,
+      "depthSensorOnline": true
     }
   }]
 }
 ```
 
+#### 属性字段说明
+
+| 属性名 | 数据类型 | 单位 | 说明 |
+|---|---|---|---|
+| `pH` | float | — | pH 值（0 ~ 14） |
+| `TDS` | float | ppm | 溶解性固体总量（0 ~ 2000） |
+| `turbidity` | int | — | 浊度 ADC 原始值（0 ~ 4095） |
+| `ammoniaNitrogen` | float | mg/L | 氨氮浓度（0 ~ 50） |
+| `waterTemp` | float | ℃ | DS18B20 水温（0 ~ 100） |
+| `depth` | float | m | MS5837 水深（0 ~ 30） |
+| `depthPressure` | float | mbar | 深度传感器压力值 |
+| `depthSensorTemp` | float | ℃ | 深度传感器内部温度 |
+| `waterQualityNormal` | boolean | — | 水质是否正常 |
+| `depthSensorOnline` | boolean | — | 深度传感器是否在线 |
+
+#### 华为云物模型配置
+
+在华为云 IoTDA 控制台的"物模型"中，需创建一个名为 `water_quality` 的服务，并添加上述 10 个属性。每个属性的"数据类型"须与上表一致（float 对应 decimal，int 对应 int，boolean 对应 boolean）。
+
+> 📖 详细的物模型创建步骤和参数配置请参考 `doc/MQTT华为云对接手册.md`。
+
 ### 7.3 MQTT 上报周期
 
-- 每 2 秒采集一次传感器数据
-- 每 5 秒检查一次 MQTT 连接状态
-- 采集后立即上报
+| 操作 | 间隔 | 说明 |
+|---|---|---|
+| 传感器采集 | 2 秒 | 读取所有传感器数据并串口输出 |
+| 数据上报 | 5 秒 | 通过 MQTT 上报到华为云 |
+| 连接检查 | 持续 | 每次 loop 均检查 MQTT 连接 |
+
+### 7.4 MQTT 连接流程
+
+```
+设备上电
+  ↓
+WiFi 连接（超时30秒自动重启）
+  ↓
+MQTT 连接华为云 IoTDA
+  ↓
+┌──────────────────────────┐
+│  采集传感器数据 (2s)       │ ←── 持续循环
+│  串口输出数据              │
+│  MQTT 上报数据 (5s)       │
+│  处理 MQTT 下发消息        │
+└──────────────────────────┘
+```
+
+### 7.5 平台下发命令
+
+设备已注册 MQTT 消息回调函数，可接收华为云平台下发的属性设置和命令。当前版本仅打印接收到的消息，未实现具体的命令执行逻辑，后续可按需扩展。
 
 ---
 
@@ -489,3 +560,18 @@ MS5837 出厂时已校准（PROM 中存储校准系数），通常无需手动�
 | 修改 main.cpp | 主循环增加深度数据读取和输出，水质判断增加深度参数 |
 | I2C 引脚 | GPIO8 (SCL), GPIO9 (SDA) |
 | 深度阈值 | DEPTH_MAX_NORMAL = 10.0m |
+
+## 附录 D: V3.0 MQTT 上报完善变更记录
+
+| 变更项 | 说明 |
+|---|---|
+| 修复 MQTT Topic 宏 | 原 `"$oc/devices/{" deviceId"/sys/properties/report"` 语法错误，改为 `"$oc/devices/" DEVICE_ID "/sys/properties/report"` |
+| 修复 WiFi 未初始化 | 原 `wifiInit()` 未在 `setup()` 中调用，现已在 `setup()` 中调用 |
+| 修复上报数据为随机值 | 原 `mqttIntervalPost()` 使用 `random()` 生成随机数据上报，现改为上报真实传感器数据 |
+| 新增完整传感器数据上报 | 上报包含 pH、TDS、浊度、氨氮、水温、深度、深度压力、深度温度、水质状态、深度传感器状态共 10 个属性 |
+| 更改 service_id | 从 `"TEST"` 改为 `"water_quality"`，匹配华为云物模型服务标识 |
+| 新增 SensorData 结构体 | 统一缓存传感器数据，避免采集与上报不一致 |
+| 新增 MQTT 消息回调 | 注册 `mqttCallback` 函数，可接收平台下发命令 |
+| 优化上报周期 | 传感器采集 2 秒，数据上报 5 秒，独立控制 |
+| 新增 WiFi 连接超时重启 | WiFi 连接超时 30 秒自动重启设备 |
+| 新增 MQTT 调试信息 | 上报时输出完整的传感器数值和上报结果 |

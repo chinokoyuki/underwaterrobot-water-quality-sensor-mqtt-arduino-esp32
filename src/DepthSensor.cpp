@@ -93,7 +93,7 @@ bool DepthSensor::ms5837_readProm() {
         Wire.write(MS5837_PROM_READ + i * 2);
         if (Wire.endTransmission() != 0) return false;
 
-        Wire.requestFrom(MS5837_ADDR, (uint8_t)2);
+        Wire.requestFrom((uint8_t)MS5837_ADDR, (uint8_t)2);
         if (Wire.available() < 2) return false;
 
         _ms5837_prom[i] = (Wire.read() << 8) | Wire.read();
@@ -140,7 +140,7 @@ uint32_t DepthSensor::ms5837_readADC(uint8_t cmd) {
     delay(10);
 
     ms5837_cmd(MS5837_ADC_READ);
-    Wire.requestFrom(MS5837_ADDR, (uint8_t)3);
+    Wire.requestFrom((uint8_t)MS5837_ADDR, (uint8_t)3);
     if (Wire.available() < 3) return 0;
 
     uint32_t val = Wire.read();
