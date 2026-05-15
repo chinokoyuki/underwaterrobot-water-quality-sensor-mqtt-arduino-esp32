@@ -1,0 +1,422 @@
+[
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -o third-party\\catch\\CMakeFiles\\catch.dir\\catch.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\third-party\\catch\\catch.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\third-party\\catch\\catch.cpp",
+  "output": "third-party\\catch\\CMakeFiles\\catch.dir\\catch.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\alloc.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\alloc.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\alloc.cpp",
+  "output": "test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\alloc.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\createArray.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\createArray.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\createArray.cpp",
+  "output": "test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\createArray.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\createObject.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\createObject.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\createObject.cpp",
+  "output": "test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\createObject.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\no_memory.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\no_memory.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\no_memory.cpp",
+  "output": "test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\no_memory.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\size.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\size.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\size.cpp",
+  "output": "test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\size.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\startString.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\startString.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\DynamicJsonBuffer\\startString.cpp",
+  "output": "test\\DynamicJsonBuffer\\CMakeFiles\\DynamicJsonBufferTests.dir\\startString.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -fsingle-precision-constant -o test\\IntegrationTests\\CMakeFiles\\IntegrationTests.dir\\gbathree.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\IntegrationTests\\gbathree.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\IntegrationTests\\gbathree.cpp",
+  "output": "test\\IntegrationTests\\CMakeFiles\\IntegrationTests.dir\\gbathree.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -fsingle-precision-constant -o test\\IntegrationTests\\CMakeFiles\\IntegrationTests.dir\\round_trip.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\IntegrationTests\\round_trip.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\IntegrationTests\\round_trip.cpp",
+  "output": "test\\IntegrationTests\\CMakeFiles\\IntegrationTests.dir\\round_trip.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\add.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\add.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\add.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\add.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\basics.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\basics.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\basics.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\basics.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\copyFrom.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\copyFrom.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\copyFrom.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\copyFrom.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\copyTo.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\copyTo.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\copyTo.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\copyTo.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\invalid.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\invalid.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\invalid.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\invalid.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\iterator.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\iterator.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\iterator.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\iterator.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\prettyPrintTo.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\prettyPrintTo.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\prettyPrintTo.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\prettyPrintTo.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\printTo.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\printTo.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\printTo.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\printTo.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\remove.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\remove.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\remove.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\remove.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\set.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\set.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\set.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\set.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\size.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\size.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\size.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\size.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\subscript.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\subscript.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonArray\\subscript.cpp",
+  "output": "test\\JsonArray\\CMakeFiles\\JsonArrayTests.dir\\subscript.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\nested.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\nested.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\nested.cpp",
+  "output": "test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\nested.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\nestingLimit.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\nestingLimit.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\nestingLimit.cpp",
+  "output": "test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\nestingLimit.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\parse.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\parse.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\parse.cpp",
+  "output": "test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\parse.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\parseArray.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\parseArray.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\parseArray.cpp",
+  "output": "test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\parseArray.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\parseObject.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\parseObject.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonBuffer\\parseObject.cpp",
+  "output": "test\\JsonBuffer\\CMakeFiles\\JsonBufferTests.dir\\parseObject.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\basics.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\basics.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\basics.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\basics.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\containsKey.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\containsKey.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\containsKey.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\containsKey.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\get.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\get.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\get.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\get.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\invalid.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\invalid.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\invalid.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\invalid.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\iterator.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\iterator.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\iterator.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\iterator.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\prettyPrintTo.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\prettyPrintTo.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\prettyPrintTo.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\prettyPrintTo.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\printTo.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\printTo.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\printTo.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\printTo.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\remove.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\remove.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\remove.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\remove.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\set.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\set.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\set.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\set.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\size.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\size.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\size.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\size.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\subscript.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\subscript.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonObject\\subscript.cpp",
+  "output": "test\\JsonObject\\CMakeFiles\\JsonObjectTests.dir\\subscript.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\as.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\as.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\as.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\as.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\compare.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\compare.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\compare.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\compare.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\copy.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\copy.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\copy.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\copy.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\is.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\is.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\is.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\is.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\or.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\or.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\or.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\or.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\printTo.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\printTo.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\printTo.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\printTo.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\set_get.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\set_get.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\set_get.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\set_get.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\subscript.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\subscript.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\subscript.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\subscript.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\success.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\success.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\success.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\success.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\undefined.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\undefined.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonVariant\\undefined.cpp",
+  "output": "test\\JsonVariant\\CMakeFiles\\JsonVariantTests.dir\\undefined.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonWriter\\CMakeFiles\\JsonWriterTests.dir\\writeFloat.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonWriter\\writeFloat.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonWriter\\writeFloat.cpp",
+  "output": "test\\JsonWriter\\CMakeFiles\\JsonWriterTests.dir\\writeFloat.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\JsonWriter\\CMakeFiles\\JsonWriterTests.dir\\writeString.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonWriter\\writeString.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\JsonWriter\\writeString.cpp",
+  "output": "test\\JsonWriter\\CMakeFiles\\JsonWriterTests.dir\\writeString.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\deprecated.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\deprecated.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\deprecated.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\deprecated.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\FloatParts.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\FloatParts.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\FloatParts.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\FloatParts.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\std_stream.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\std_stream.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\std_stream.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\std_stream.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\std_string.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\std_string.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\std_string.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\std_string.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\StringBuilder.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\StringBuilder.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\StringBuilder.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\StringBuilder.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\StringTraits.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\StringTraits.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\StringTraits.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\StringTraits.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\TypeTraits.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\TypeTraits.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\TypeTraits.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\TypeTraits.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\unsigned_char.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\unsigned_char.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\unsigned_char.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\unsigned_char.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\version.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\version.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\version.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\version.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Misc\\CMakeFiles\\MiscTests.dir\\vla.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\vla.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Misc\\vla.cpp",
+  "output": "test\\Misc\\CMakeFiles\\MiscTests.dir\\vla.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Polyfills\\CMakeFiles\\PolyfillsTests.dir\\isFloat.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Polyfills\\isFloat.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Polyfills\\isFloat.cpp",
+  "output": "test\\Polyfills\\CMakeFiles\\PolyfillsTests.dir\\isFloat.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Polyfills\\CMakeFiles\\PolyfillsTests.dir\\isInteger.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Polyfills\\isInteger.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Polyfills\\isInteger.cpp",
+  "output": "test\\Polyfills\\CMakeFiles\\PolyfillsTests.dir\\isInteger.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Polyfills\\CMakeFiles\\PolyfillsTests.dir\\parseFloat.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Polyfills\\parseFloat.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Polyfills\\parseFloat.cpp",
+  "output": "test\\Polyfills\\CMakeFiles\\PolyfillsTests.dir\\parseFloat.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\Polyfills\\CMakeFiles\\PolyfillsTests.dir\\parseInteger.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Polyfills\\parseInteger.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\Polyfills\\parseInteger.cpp",
+  "output": "test\\Polyfills\\CMakeFiles\\PolyfillsTests.dir\\parseInteger.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\alloc.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\alloc.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\alloc.cpp",
+  "output": "test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\alloc.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\createArray.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\createArray.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\createArray.cpp",
+  "output": "test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\createArray.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\createObject.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\createObject.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\createObject.cpp",
+  "output": "test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\createObject.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\parseArray.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\parseArray.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\parseArray.cpp",
+  "output": "test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\parseArray.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\parseObject.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\parseObject.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\parseObject.cpp",
+  "output": "test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\parseObject.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\size.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\size.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\size.cpp",
+  "output": "test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\size.cpp.obj"
+},
+{
+  "directory": "D:/Project/Arudino_ESP32/build",
+  "command": "C:\\PROGRA~1\\gcc\\bin\\G__~1.EXE -ID:/Project/Arudino_ESP32/lib/ArduinoJson/src -ID:/Project/Arudino_ESP32/lib/ArduinoJson/third-party/catch -g -pedantic -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Werror -Wextra -Wformat=2 -Winit-self -Wmissing-include-dirs -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wparentheses -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-aliasing -Wstrict-overflow=5 -Wundef -Wstrict-null-sentinel -Wlogical-op -Wnoexcept -o test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\startString.cpp.obj -c D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\startString.cpp",
+  "file": "D:\\Project\\Arudino_ESP32\\lib\\ArduinoJson\\test\\StaticJsonBuffer\\startString.cpp",
+  "output": "test\\StaticJsonBuffer\\CMakeFiles\\StaticJsonBufferTests.dir\\startString.cpp.obj"
+}
+]

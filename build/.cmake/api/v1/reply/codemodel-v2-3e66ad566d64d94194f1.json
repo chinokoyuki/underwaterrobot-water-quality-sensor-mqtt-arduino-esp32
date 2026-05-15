@@ -1,0 +1,342 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "third-party/catch",
+					"jsonFile" : "directory-third-party.catch-Debug-77c1d0af77a3e7bc4a34.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "third-party/catch",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "test",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					],
+					"jsonFile" : "directory-test-Debug-f18be1977b403cfd1a50.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "test"
+				},
+				{
+					"build" : "test/DynamicJsonBuffer",
+					"jsonFile" : "directory-test.DynamicJsonBuffer-Debug-17041a62953bf063016c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/DynamicJsonBuffer",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "test/IntegrationTests",
+					"jsonFile" : "directory-test.IntegrationTests-Debug-3b59b965f98ef768a700.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/IntegrationTests",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "test/JsonArray",
+					"jsonFile" : "directory-test.JsonArray-Debug-cc47cc6c7699a5279a84.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/JsonArray",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "test/JsonBuffer",
+					"jsonFile" : "directory-test.JsonBuffer-Debug-c7ab5ed8683fd086cbaf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/JsonBuffer",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "test/JsonObject",
+					"jsonFile" : "directory-test.JsonObject-Debug-730e5fc809e86ea2bb27.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/JsonObject",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "test/JsonVariant",
+					"jsonFile" : "directory-test.JsonVariant-Debug-d089cb3ccf14d3341e9c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/JsonVariant",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "test/JsonWriter",
+					"jsonFile" : "directory-test.JsonWriter-Debug-cf6862c621757bf9d8a1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/JsonWriter",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "test/Misc",
+					"jsonFile" : "directory-test.Misc-Debug-e96788c9049426c2f357.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/Misc",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "test/Polyfills",
+					"jsonFile" : "directory-test.Polyfills-Debug-d45951b2653a1e0188c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/Polyfills",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "test/StaticJsonBuffer",
+					"jsonFile" : "directory-test.StaticJsonBuffer-Debug-10df05124e411c8073f2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "test/StaticJsonBuffer",
+					"targetIndexes" : 
+					[
+						9
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					],
+					"name" : "ArduinoJson",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "DynamicJsonBufferTests::@7e46171bd8a8b02a097e",
+					"jsonFile" : "target-DynamicJsonBufferTests-Debug-3dd4402083cd01c1b303.json",
+					"name" : "DynamicJsonBufferTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IntegrationTests::@ac004d3da68327456276",
+					"jsonFile" : "target-IntegrationTests-Debug-4d3d105161e2cf908e19.json",
+					"name" : "IntegrationTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "JsonArrayTests::@7c8d23b2b773b71d8f3f",
+					"jsonFile" : "target-JsonArrayTests-Debug-5ffa622ea63eb5799b3b.json",
+					"name" : "JsonArrayTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "JsonBufferTests::@bf75e9d8302f2fd10dfd",
+					"jsonFile" : "target-JsonBufferTests-Debug-35b62abacc227c26def4.json",
+					"name" : "JsonBufferTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "JsonObjectTests::@7b59fb20fd0098158368",
+					"jsonFile" : "target-JsonObjectTests-Debug-8fe06916dbab5106cce3.json",
+					"name" : "JsonObjectTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "JsonVariantTests::@6c9a6a34a7b702093d66",
+					"jsonFile" : "target-JsonVariantTests-Debug-33078ebca5ec1e5eb17d.json",
+					"name" : "JsonVariantTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "JsonWriterTests::@1b23d277f9ff1c821212",
+					"jsonFile" : "target-JsonWriterTests-Debug-4647578b83c31398e7da.json",
+					"name" : "JsonWriterTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "MiscTests::@c16825fb6615ea598118",
+					"jsonFile" : "target-MiscTests-Debug-1fabf34e7ae2cb9a2e41.json",
+					"name" : "MiscTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "PolyfillsTests::@4320d2edd1ce0eca83b8",
+					"jsonFile" : "target-PolyfillsTests-Debug-e86e0e1c49a02de52b8f.json",
+					"name" : "PolyfillsTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "StaticJsonBufferTests::@aa2589d6c9e5339f193e",
+					"jsonFile" : "target-StaticJsonBufferTests-Debug-84a927b291526d3de606.json",
+					"name" : "StaticJsonBufferTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "catch::@445a2feddd1f171d6c2f",
+					"jsonFile" : "target-catch-Debug-88815694ca3200ffaf8f.json",
+					"name" : "catch",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Project/Arudino_ESP32/build",
+		"source" : "D:/Project/Arudino_ESP32/lib/ArduinoJson"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
