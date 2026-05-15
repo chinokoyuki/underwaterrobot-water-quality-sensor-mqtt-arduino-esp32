@@ -3,19 +3,19 @@
 #include <WiFi.h>
 
 /* ========== 华为云 IoTDA 设备配置 ========== */
-#define DEVICE_ID         "69632991c00ccb6d4b32b204_ABX00083_CN_1"
-#define DEVICE_SECRET     "Takanashi0721"
+#define DEVICE_ID         "你的设备ID"
+#define DEVICE_SECRET     "你的设备密钥"
 
 /* ========== WiFi 配置 ========== */
-#define WIFI_SSID         "HUAWEI Pura 70 Pro"
-#define WIFI_PASSWD       "200509240721"
+#define WIFI_SSID         "你的WiFi名称"
+#define WIFI_PASSWD       "你的WiFi密码"
 
 /* ========== 华为云 MQTT 连接参数 ========== */
-#define MQTT_SERVER       "cbd1b71b46.st1.iotda-device.cn-south-1.myhuaweicloud.com"
+#define MQTT_SERVER       "你的华为云MQTT地址"
 #define MQTT_PORT         1883
-#define MQTT_USERNAME     "69632991c00ccb6d4b32b204_ABX00083_CN_1"
-#define CLIENT_ID         "69632991c00ccb6d4b32b204_ABX00083_CN_1_0_0_2026011206"
-#define MQTT_PASSWD       "8c834a00f2633ce36a07455f812ef84a3171955848ceda2534b899f8b9736e1e"
+#define MQTT_USERNAME     "你的MQTT用户名（通常与DEVICE_ID相同）"
+#define CLIENT_ID         "你的客户端ID"
+#define MQTT_PASSWD       "你的MQTT密码"
 
 /* ========== MQTT Topic 和 Payload 格式 ========== */
 // 属性上报 Topic（设备 -> 平台）
