@@ -206,7 +206,7 @@ void mqttIntervalPost()
     );
 
     // 组装完整 Payload
-    char jsonBuf[384];
+    char jsonBuf[512];
     snprintf(jsonBuf, sizeof(jsonBuf), ALINK_BODY_FORMAT, properties);
 
     // 发布消息
