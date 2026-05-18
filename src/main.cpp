@@ -181,9 +181,15 @@ void mqttIntervalPost()
         return;
     }
 
-    // 构建属性 JSON
-    // 华为云 IoTDA 属性名建议使用驼峰命名，与物模型定义一致
-    char properties[256];
+    // 确认连接状态
+    if (!client.connected()) {
+        Serial.println("[MQTT] client.connected()=false，重新连接");
+        mqttConnected = false;
+        return;
+    }
+
+    // 构建属性 JSON —— 属性名必须与华为云 IoTDA 物模型完全一致
+    char properties[384];
     snprintf(properties, sizeof(properties),
         "{\"pH\":%.2f,\"TDS\":%.1f,\"turbidity\":%d,\"ammoniaNitrogen\":%.2f,\"waterTemp\":%.1f,\"depth\":%.2f,\"depthPressure\":%.1f,\"depthSensorTemp\":%.1f,\"waterQualityNormal\":%s,\"depthSensorOnline\":%s}",
         sensorData.ph,
