@@ -209,10 +209,7 @@ void mqttIntervalPost()
     char jsonBuf[512];
     snprintf(jsonBuf, sizeof(jsonBuf), ALINK_BODY_FORMAT, properties);
 
-    // 发布消息
-    boolean publishResult = client.publish(ALINK_TOPIC_PROP_POST, jsonBuf);
-
-    // 串口调试输出
+    // 详细调试输出
     Serial.println("========== MQTT 数据上报 ==========");
     Serial.print("  pH值:       "); Serial.println(sensorData.ph, 2);
     Serial.print("  TDS:        "); Serial.println(sensorData.tds, 1);
