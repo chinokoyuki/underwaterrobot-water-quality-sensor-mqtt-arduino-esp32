@@ -32,6 +32,9 @@
 #define UPLOAD_INTERVAL_MS  5000   // 数据上报间隔（毫秒）
 #define SENSOR_INTERVAL_MS  2000   // 传感器采集间隔（毫秒）
 
+/* ========== 板载 LED ========== */
+#define LED_PIN  LED_BUILTIN       // Arduino Nano ESP32 板载 LED (GPIO13)
+
 /* ========== 全局对象 ========== */
 WaterQualitySensor waterSensor;
 WiFiClient espClient;
