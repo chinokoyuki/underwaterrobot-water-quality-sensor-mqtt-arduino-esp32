@@ -201,7 +201,8 @@ void mqttIntervalPost()
         sensorData.depthPressure,
         sensorData.depthTemp,
         sensorData.isNormal ? "true" : "false",
-        sensorData.depthSensorOk ? "true" : "false"
+        sensorData.depthSensorOk ? "true" : "false",
+        0.0f   // 溶解氧传感器暂未接入，上报占位值 0.0
     );
 
     // 组装完整 Payload
