@@ -102,6 +102,16 @@ void mqttCheckConnect()
     Serial.println("[MQTT] 正在连接华为云 IoTDA...");
     mqttConnected = false;
 
+    // 打印连接诊断信息
+    Serial.print("[MQTT] Server: ");
+    Serial.print(MQTT_SERVER);
+    Serial.print(":");
+    Serial.println(MQTT_PORT);
+    Serial.print("[MQTT] ClientID: ");
+    Serial.println(CLIENT_ID);
+    Serial.print("[MQTT] Username: ");
+    Serial.println(MQTT_USERNAME);
+
     // 尝试连接
     if (client.connect(CLIENT_ID, MQTT_USERNAME, MQTT_PASSWD)) {
         mqttConnected = true;
