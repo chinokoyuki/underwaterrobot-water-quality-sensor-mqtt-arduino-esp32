@@ -118,7 +118,17 @@ void mqttCheckConnect()
         Serial.println("[MQTT] 连接成功！");
     } else {
         Serial.print("[MQTT] 连接失败，状态码: ");
-        Serial.println(client.state());
+        Serial.println(state);
+        // 状态码含义说明
+        switch (state) {
+            case -4: Serial.println("[MQTT] 原因: 连接超时，检查网络或服务器地址"); break;
+            case -3: Serial.println("[MQTT] 原因: 连接断开"); break;
+            case -2: Serial.println("[MQTT] 原因: 连接失败"); break;
+            case  2: Serial.println("[MQTT] 原因: ClientID被拒绝 或 心跳间隔不满足平台要求(需≥30秒)"); break;
+            case  4: Serial.println("[MQTT] 原因: 用户名或密码错误，请重新生成MQTT密码"); break;
+            case  5: Serial.println("[MQTT] 原因: 未授权，设备可能被冻结"); break;
+            default: Serial.println("[MQTT] 原因: 未知错误"); break;
+        }
     }
 }
 
