@@ -147,7 +147,7 @@ void mqttCallback(char* topic, byte* payload, unsigned int length)
     Serial.print("[MQTT] 消息内容: ");
     Serial.println(msg);
 
-    // TODO: 可在此处解析平台下发的属性设置或命令，执行相应操作
+    // TODO 可在此处解析平台下发的属性设置或命令，执行相应操作
 }
 
 /* ========== 传感器数据采集 ========== */
