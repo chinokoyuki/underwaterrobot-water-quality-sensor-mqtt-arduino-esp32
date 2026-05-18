@@ -87,6 +87,8 @@ void wifiInit()
 
     // 连接 WiFi 之后，设置 MQTT 服务器
     client.setServer(MQTT_SERVER, MQTT_PORT);
+    // 设置心跳间隔为60秒（华为云IoTDA要求≥30秒，PubSubClient默认15秒太短会导致state 2）
+    client.setKeepAlive(60);
 }
 
 /* ========== MQTT 连接维持 ========== */
