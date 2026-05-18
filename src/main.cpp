@@ -1,4 +1,6 @@
 #include "WaterQualitySensor.h"
+// 必须在 include PubSubClient 之前设置，否则默认 128 字节会导致上报失败
+#define MQTT_MAX_PACKET_SIZE 512
 #include <PubSubClient.h>
 #include <WiFi.h>
 
