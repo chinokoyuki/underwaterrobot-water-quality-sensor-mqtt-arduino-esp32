@@ -211,17 +211,35 @@ void mqttIntervalPost()
 
     // 详细调试输出
     Serial.println("========== MQTT 数据上报 ==========");
-    Serial.print("  pH值:       "); Serial.println(sensorData.ph, 2);
-    Serial.print("  TDS:        "); Serial.println(sensorData.tds, 1);
-    Serial.print("  浊度(ADC):  "); Serial.println(sensorData.turbidity);
-    Serial.print("  氨氮:       "); Serial.println(sensorData.ammonia, 2);
-    Serial.print("  水温:       "); Serial.println(sensorData.temperature, 1);
-    Serial.print("  深度:       "); Serial.println(sensorData.depth, 2);
-    Serial.print("  深度压力:   "); Serial.println(sensorData.depthPressure, 1);
-    Serial.print("  深度温度:   "); Serial.println(sensorData.depthTemp, 1);
-    Serial.print("  水质状态:   "); Serial.println(sensorData.isNormal ? "正常" : "超标报警");
-    Serial.print("  深度传感器: "); Serial.println(sensorData.depthSensorOk ? "在线" : "离线");
-    Serial.print("  上报结果:   "); Serial.println(publishResult ? "成功" : "失败");
+    Serial.print("  Payload长度: ");
+    Serial.println(strlen(jsonBuf));
+
+    // 上报期间 LED 常亮
+    digitalWrite(LED_PIN, HIGH);
+
+    // 使用 beginPublish/write/endPublish 分块发送
+    // 原因：client.publish() 要求 WiFiClient.write() 一次性发完所有字节，
+    // ESP32 的 WiFiClient 可能分多次发送，导致 publish 返回 false
+    boolean publishResult = false;
+    if (client.beginPublish(ALINK_TOPIC_PROP_POST, strlen(jsonBuf), false)) {
+        size_t written = client.print(jsonBuf);
+        publishResult = (written == strlen(jsonBuf));
+        client.endPublish();
+    }
+
+    // LED 反馈：成功闪2次，失败闪1次长
+    digitalWrite(LED_PIN, LOW);
+    if (publishResult) {
+        // 成功：快闪2次
+        digitalWrite(LED_PIN, HIGH); delay(80); digitalWrite(LED_PIN, LOW); delay(80);
+        digitalWrite(LED_PIN, HIGH); delay(80); digitalWrite(LED_PIN, LOW);
+    } else {
+        // 失败：长闪1次
+        digitalWrite(LED_PIN, HIGH); delay(300); digitalWrite(LED_PIN, LOW);
+    }
+
+    Serial.print("  上报结果:   ");
+    Serial.println(publishResult ? "成功" : "失败");
     Serial.println("===================================");
 }
 
