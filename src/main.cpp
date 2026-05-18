@@ -269,6 +269,10 @@ void setup() {
         delay(10);
     }
 
+    // 初始化板载 LED
+    pinMode(LED_PIN, OUTPUT);
+    digitalWrite(LED_PIN, LOW);
+
     // 初始化传感器
     waterSensor.begin();
 
