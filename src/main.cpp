@@ -71,7 +71,8 @@ void wifiInit()
     int retryCount = 0;
     while (WiFiClass::status() != WL_CONNECTED)
     {
-        delay(1000);
+        delay(500);
+        digitalWrite(LED_PIN, !digitalRead(LED_PIN));  // WiFi连接中 LED 快闪
         retryCount++;
         Serial.print(".");
         if (retryCount > 30) {
