@@ -117,6 +117,7 @@ void mqttCheckConnect()
         mqttConnected = true;
         Serial.println("[MQTT] 连接成功！");
     } else {
+        int state = client.state();
         Serial.print("[MQTT] 连接失败，状态码: ");
         Serial.println(state);
         // 状态码含义说明
