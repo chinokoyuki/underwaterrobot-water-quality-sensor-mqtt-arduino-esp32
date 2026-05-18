@@ -25,7 +25,7 @@
 // 属性设置响应 Topic（设备 -> 平台，响应平台下发命令）
 #define ALINK_TOPIC_PROP_SET      "$oc/devices/" DEVICE_ID "/sys/properties/set"
 // 命令下发 Topic（平台 -> 设备）
-#define ALINK_TOPIC_COMMAND       "$oc/devices/" DEVICE_ID /sys/commands/#
+#define ALINK_TOPIC_COMMAND       "$oc/devices/" DEVICE_ID "/sys/commands/#"
 // 属性上报 Payload 模板（华为云 IoTDA 标准格式）
 // service_id 对应华为云控制台创建的"服务"标识
 #define ALINK_BODY_FORMAT         "{\"services\":[{\"service_id\":\"water_quality\",\"properties\":%s}]}"
