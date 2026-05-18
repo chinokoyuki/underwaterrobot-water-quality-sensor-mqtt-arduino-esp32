@@ -224,12 +224,16 @@
 密码通过 HMAC-SHA256 算法计算：
 
 ```
-Password = hmac_sha256(DeviceSecret, TimeStamp)
+Password = hmac_sha256(key=TimeStamp, message=DeviceSecret)
 ```
 
+> ⚠️ **注意**：HMAC 的 key 是时间戳，message 是设备密钥，**不要搞反**！
+> 错误写法：`hmac_sha256(key=DeviceSecret, message=TimeStamp)` ← 这样算出的密码无法连接！
+
 其中：
+- `TimeStamp`：ClientID 中的时间戳部分（格式 `YYYYMMDDHH`，如 `2026051802`）
 - `DeviceSecret`：设备密钥（注册时生成）
-- `TimeStamp`：ClientID 中的时间戳部分（如 `2026011206`）
+- 输出格式：64 位十六进制字符串
 
 **生成方法（推荐使用华为云在线工具）：**
 
@@ -244,16 +248,18 @@ import hmac
 import hashlib
 
 def generate_password(device_secret, timestamp):
-    """生成华为云 IoTDA MQTT 密码"""
+    """生成华为云 IoTDA MQTT 密码
+    注意: key=timestamp, message=device_secret (不要搞反！)
+    """
     return hmac.new(
-        device_secret.encode('utf-8'),
-        timestamp.encode('utf-8'),
+        timestamp.encode('utf-8'),       # key = 时间戳
+        device_secret.encode('utf-8'),   # message = 设备密钥
         hashlib.sha256
     ).hexdigest()
 
 # 示例
 device_secret = "你的设备密钥"
-timestamp = "2026011206"
+timestamp = "2026051802"
 password = generate_password(device_secret, timestamp)
 print(f"Password: {password}")
 ```
