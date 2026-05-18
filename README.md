@@ -1,33 +1,47 @@
-# 🌊 水下机器人水质传感器系统
+# 水下机器人水质传感器系统
 
-> **Arduino Nano ESP32 平台 · 多参数水质监测 · 华为云 MQTT 上报**
+> Arduino Nano ESP32 · 多参数水质监测 · 华为云 IoTDA MQTT 上报
 
-基于 **Arduino Nano ESP32** 开发的水质多参数采集与云端上报系统，搭载 **pH / TDS / 浊度 / 氨氮 / DS18B20 水温 / MS5837 深度** 六合一传感器阵列，支持超标报警与华为云 IoT 平台实时数据上报。
+基于 **Arduino Nano ESP32** (ESP32-S3) 开发的水质多参数采集与云端上报系统，搭载 **pH / TDS / 浊度 / 氨氮 / DS18B20 水温 / MS5837 深度** 六合一传感器阵列，支持超标报警、板载 LED 状态指示与华为云 IoT 平台实时数据上报。
 
 ---
 
-## 🧱 技术栈
+## 功能特性
+
+- **6 参数水质采集**：pH、TDS、浊度、氨氮、水温、深度
+- **深度传感器扩展**：MS5837 同时输出压力、温度、深度数据
+- **超标报警**：pH / TDS / 氨氮 / 深度超阈值自动触发蜂鸣器
+- **云端上报**：MQTT v3.1.1 接入华为云 IoTDA，5 秒周期自动上报 11 个属性
+- **板载 LED 指示**：WiFi 连接闪烁、上报中常亮、成功双闪、失败长闪
+- **自动重连**：WiFi / MQTT 断线自动恢复，超时自动重启
+
+---
+
+## 技术栈
 
 | 层面 | 技术 | 说明 |
 |------|------|------|
-| **主控芯片** | ESP32-S3 (Xtensa LX7 双核 240MHz) | 搭载在 Arduino Nano ESP32 开发板上 |
-| **开发框架** | [PlatformIO](https://platformio.org/) + [Arduino](https://www.arduino.cc/) | 跨平台嵌入式构建系统 |
-| **编程语言** | C++11 (Arduino 框架风格) | 面向对象封装传感器类 |
-| **通信协议** | **WiFi** (802.11 b/g/n) + **MQTT** (PubSubClient) | 无线连接华为云 IoT 平台 |
-| **云平台** | [华为云 IoT 设备接入](https://www.huaweicloud.com/product/iothub.html) | 设备影子 + 属性上报 |
+| **主控芯片** | ESP32-S3 (Xtenga LX7 双核 240MHz) | Arduino Nano ESP32 开发板 |
+| **开发框架** | PlatformIO + Arduino | 跨平台嵌入式构建系统 |
+| **编程语言** | C++11 (Arduino 风格) | 面向对象封装传感器类 |
+| **通信协议** | WiFi (802.11 b/g/n) + MQTT (PubSubClient) | 无线连接华为云 IoTDA |
+| **云平台** | 华为云 IoT 设备接入 (IoTDA) | 属性上报 + 命令下发 |
 
-### 📦 关键依赖库
+### 依赖库
 
 | 库名 | 用途 | 版本 |
 |------|------|------|
-| [OneWire](https://github.com/PaulStoffregen/OneWire) | DS18B20 单总线通信 | ^2.3.8 |
-| [DallasTemperature](https://github.com/milesburton/Arduino-Temperature-Control-Library) | DS18B20 温度读取 | ^4.0.5 |
-| [PubSubClient](https://github.com/knolleary/pubsubclient) | MQTT 客户端协议实现 | ^2.8 |
-| [ArduinoJson](https://arduinojson.org/) | JSON 数据序列化（预留） | — |
-| [FastLED](https://github.com/FastLED/FastLED) | LED 状态指示（预留） | — |
-| [BearSSL](https://github.com/spotify/bearssl) | SSL/TLS 加密通信（预留） | — |
+| OneWire | DS18B20 单总线通信 | ^2.3.8 |
+| DallasTemperature | DS18B20 温度读取 | ^4.0.5 |
+| PubSubClient | MQTT 客户端协议实现 | ^2.8 |
+| WiFi | ESP32 WiFi 驱动 | ^2.0.0 |
+| Wire | ESP32 I2C 驱动 | ^2.0.0 |
 
-### 🧩 传感器列表
+---
+
+## 硬件接线
+
+### 传感器引脚分配
 
 | 传感器 | 测量参数 | 接口类型 | 引脚 |
 |--------|---------|---------|------|
@@ -36,53 +50,113 @@
 | 浊度传感器 | 水体浊度 (ADC) | 模拟输入 | A2 |
 | 氨氮传感器 | 氨氮浓度 (mg/L) | 模拟输入 | A3 |
 | DS18B20 | 水温 (℃) | 单总线 (OneWire) | A4 |
-| **MS5837** | 深度 (m) / 压力 (mbar) | **I2C** | **D8(SCL) / D9(SDA)** |
+| MS5837 | 深度 (m) / 压力 (mbar) | I2C | D8(SCL) / D9(SDA) |
 
-### 🏗️ 软件架构
+### 控制引脚
+
+| 功能 | 引脚 | 类型 |
+|------|------|------|
+| 传感器使能 | GPIO2 | 数字输出 (高电平使能) |
+| 报警蜂鸣器 | GPIO3 | 数字输出 (高电平触发) |
+| 板载 LED | GPIO13 (LED_BUILTIN) | 数字输出 |
+
+---
+
+## 云端配置
+
+### 华为云 IoTDA 物模型
+
+项目上报的 **service_id** 为 `WaterQuality`，包含以下 11 个属性：
+
+| 属性名 (物模型) | 中文名 | 数据类型 | 对应传感器 |
+|---|---|---|---|
+| `HydrogenIonConcentration` | pH 值 | float | pH 电极 |
+| `TotalDissolvedSolids` | TDS | float | TDS 模块 |
+| `Turbidity` | 浊度 | int | 浊度传感器 |
+| `AmmoniaNitrogen` | 氨氮 | float | 氨氮传感器 |
+| `Temperature` | 水温 | float | DS18B20 |
+| `Depth` | 深度 | float | MS5837 |
+| `DepthPressure` | 深度压力 | float | MS5837 |
+| `DepthSensorTemp` | 深度传感器温度 | float | MS5837 |
+| `WaterQualityNormal` | 水质是否正常 | boolean | 综合判断 |
+| `DepthSensorOnline` | 深度传感器在线 | boolean | MS5837 |
+| `DissolvedOxygen` | 溶解氧 | float | 暂未接入，占位 0.0 |
+
+> 属性名必须与华为云 IoTDA 控制台物模型定义**完全一致**（含大小写），否则上报数据无法被平台识别。
+
+### MQTT 上报格式
 
 ```
+Topic: $oc/devices/{DeviceId}/sys/properties/report
+
+Payload:
+{
+  "services": [{
+    "service_id": "WaterQuality",
+    "properties": {
+      "HydrogenIonConcentration": 7.00,
+      "TotalDissolvedSolids": 96.2,
+      "Turbidity": 3893,
+      "AmmoniaNitrogen": 0.25,
+      "Temperature": 25.0,
+      "Depth": 1.50,
+      "DepthPressure": 1013.0,
+      "DepthSensorTemp": 24.5,
+      "WaterQualityNormal": true,
+      "DepthSensorOnline": true,
+      "DissolvedOxygen": 0.0
+    }
+  }]
+}
+```
+
+---
+
+## 板载 LED 状态指示
+
+| 状态 | LED 表现 |
+|------|---------|
+| WiFi 连接中 | 快闪（500ms 间隔） |
+| MQTT 上报中 | 常亮 |
+| 上报成功 | 短闪 2 次（80ms） |
+| 上报失败 | 长闪 1 次（300ms） |
+| 空闲 | 灭 |
+
+---
+
+## 软件架构
+
+```
+src/
+├── main.cpp                   # 主程序（WiFi / MQTT / 主循环 / LED 指示）
+├── WaterQualitySensor.h/cpp   # 水质传感器类（pH / TDS / 浊度 / 氨氮 / 水温 / 深度）
+└── DepthSensor.h/cpp          # 深度传感器类（MS5837 I2C 驱动）
+
 main.cpp
-├── WaterQualitySensor          # 水质传感器主控类
-│   ├── readPH()                # pH 读取
-│   ├── readTDS()               # TDS 读取
-│   ├── readTurbidity()         # 浊度读取
-│   ├── readAmmoniaNitrogen()   # 氨氮读取
-│   ├── readTemperature()       # DS18B20 水温
-│   ├── readDepth()             # 深度读取（委托给 DepthSensor）
-│   ├── enableSensor() / disableSensor()  # 传感器电源控制
-│   └── triggerAlarm() / stopAlarm()      # 报警输出
-│
-├── DepthSensor                 # 深度传感器驱动类
-│   ├── MS5837 初始化与校准
-│   ├── 压力 / 温度 / 深度计算
-│   └── 流体密度可配置（淡水/海水）
-│
-└── WiFi + PubSubClient          # 网络通信层
-    ├── WiFi 自动重连
-    ├── MQTT 保活 (5s 间隔)
-    └── JSON 数据上报到华为云
+├── wifiInit()                 # WiFi 连接 + MQTT 服务器配置
+├── mqttCheckConnect()         # MQTT 自动连接 + 状态诊断
+├── mqttCallback()             # 接收平台下发命令
+├── readSensorData()           # 传感器数据采集
+├── mqttIntervalPost()         # 数据上报（beginPublish 流式发送）
+├── serialPrintData()          # 串口表格输出
+├── setup()                    # 初始化
+└── loop()                     # 主循环：采集 → 上报 → MQTT 消息处理
 ```
 
 ---
 
-## 📚 使用手册
-
-完整的硬件接线、软件安装、编译烧录、MQTT 配置、传感器校准与故障排查指南请参阅：
-
-[![查看使用手册](https://img.shields.io/badge/📖_查看使用手册-ESP32_水质传感器系统-2ea44f?style=for-the-badge)](doc/ESP32_使用说明手册.md)
-
----
-
-## 🚀 快速上手
+## 快速上手
 
 ```bash
 # 1. 安装 PlatformIO (VSCode 扩展或 CLI)
+
 # 2. 克隆本项目
 git clone https://github.com/chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32.git
-
-# 3. 打开项目
 cd underwaterrobot-water-quality-sensor-mqtt-arduino-esp32
-code .   # 或用 VSCode 打开
+
+# 3. 修改配置（src/main.cpp）
+#    - WIFI_SSID / WIFI_PASSWD：WiFi 名称和密码
+#    - 华为云 MQTT 凭据：DEVICE_ID / MQTT_SERVER / CLIENT_ID / MQTT_PASSWD
 
 # 4. 编译
 pio run
@@ -90,23 +164,37 @@ pio run
 # 5. 烧录（USB-C 连接开发板）
 pio run --target upload
 
-# 6. 串口监视
+# 6. 串口监视（波特率 115200）
 pio device monitor
 ```
 
-> ⚠️ 烧录前请修改 `src/main.cpp` 中的 WiFi 和华为云 MQTT 配置参数。
+> 烧录前必须修改 `src/main.cpp` 中的 WiFi 和华为云 MQTT 配置参数。MQTT 密码生成方式详见 [MQTT 对接手册](doc/MQTT华为云对接手册.md)。
 
 ---
 
-## 📌 项目信息
+## 文档
+
+| 文档 | 说明 |
+|------|------|
+| [使用说明手册](doc/ESP32_使用说明手册.md) | 硬件接线、安装编译、传感器校准、故障排查 |
+| [MQTT 华为云对接手册](doc/MQTT华为云对接手册.md) | MQTT 密码生成、物模型配置、数据格式说明 |
+
+---
+
+## 已知问题与注意事项
+
+1. **PubSubClient 大包发送**：ESP32 的 `WiFiClient.write()` 可能分片发送，导致 `publish()` 返回 `false`。本项目已改用 `beginPublish()` + `print()` + `endPublish()` 流式发送方式解决。
+2. **MQTT 心跳间隔**：华为云 IoTDA 要求 KeepAlive >= 30 秒，PubSubClient 默认 15 秒会导致连接被拒（state code 2），已在代码中设置 `setKeepAlive(60)`。
+3. **MQTT 密码算法**：华为云 IoTDA 的 MQTT 密码使用 `hmac_sha256(key=TimeStamp, message=DeviceSecret)`，**key 是时间戳，message 是设备密钥**，切勿写反。
+4. **物模型一致性**：上报 JSON 中的属性名必须与华为云控制台物模型定义完全一致（含大小写），否则平台无法识别数据。
+
+---
+
+## 项目信息
 
 | 项目 | 内容 |
 |------|------|
 | 开发者 | [chinokoyuki](https://github.com/chinokoyuki) |
 | 开源协议 | MIT |
-| 移植来源 | STM32 版水下机器人水质传感器工程 |
-| 主要变更 | MS5837 深度传感器移植、I2C 适配、华为云 MQTT |
-
----
-
-> 💡 **提示**：详细接线图、引脚分配总表、校准方法及常见排障请务必查看 [使用手册](doc/ESP32_使用说明手册.md) 哦～
+| 移植来源 | STM32F103C8T6 版水下机器人水质传感器工程 |
+| 主要变更 | 平台迁移至 ESP32-S3、MS5837 深度传感器移植、I2C 适配、华为云 IoTDA MQTT 对接、板载 LED 状态指示 |
