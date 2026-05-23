@@ -51,8 +51,8 @@ bool mqttConnected = false;          // MQTT 连接状态
 struct SensorData {
     float ph;              // pH 值
     float tds;             // TDS (ppm)
-    int   turbidity;       // 浊度 (ADC 原始值)
-    float ammonia;         // 氨氮 (mg/L)
+    double turbidity;       // 浊度 (NTU)
+    float dissolvedOxygen; // 溶解氧 (mg/L)
     float temperature;     // 水温 (℃)
     float depth;           // 深度 (m)
     float depthPressure;   // 深度传感器压力 (mbar)
@@ -156,7 +156,7 @@ void readSensorData()
     sensorData.ph           = waterSensor.readPH();
     sensorData.tds          = waterSensor.readTDS();
     sensorData.turbidity    = waterSensor.readTurbidity();
-    sensorData.ammonia      = waterSensor.readAmmoniaNitrogen();
+    sensorData.dissolvedOxygen = waterSensor.readDissolvedOxygen();
     sensorData.temperature  = waterSensor.readTemperature();
     sensorData.depth        = waterSensor.readDepth();
     sensorData.depthPressure    = waterSensor.readDepthPressure();
@@ -165,7 +165,7 @@ void readSensorData()
 
     // 水质状态判断
     sensorData.isNormal = waterSensor.isWaterQualityNormal(
-        sensorData.ph, sensorData.tds, sensorData.ammonia, sensorData.depth);
+        sensorData.ph, sensorData.tds, sensorData.dissolvedOxygen, sensorData.depth);
 
     // 报警控制
     if (!sensorData.isNormal) {
@@ -193,18 +193,17 @@ void mqttIntervalPost()
     // 构建属性 JSON —— 属性名必须与华为云 IoTDA 物模型完全一致
     char properties[384];
     snprintf(properties, sizeof(properties),
-        "{\"pH\":%.2f,\"TDS\":%.1f,\"turbidity\":%d,\"ammoniaNitrogen\":%.2f,\"waterTemp\":%.1f,\"depth\":%.2f,\"depthPressure\":%.1f,\"depthSensorTemp\":%.1f,\"waterQualityNormal\":%s,\"depthSensorOnline\":%s}",
+        "{\"pH\":%.2f,\"TDS\":%.1f,\"turbidity\":%.2f,\"dissolvedOxygen\":%.2f,\"waterTemp\":%.1f,\"depth\":%.2f,\"depthPressure\":%.1f,\"depthSensorTemp\":%.1f,\"waterQualityNormal\":%s,\"depthSensorOnline\":%s}",
         sensorData.ph,
         sensorData.tds,
         sensorData.turbidity,
-        sensorData.ammonia,
+        sensorData.dissolvedOxygen,
         sensorData.temperature,
         sensorData.depth,
         sensorData.depthPressure,
         sensorData.depthTemp,
         sensorData.isNormal ? "true" : "false",
-        sensorData.depthSensorOk ? "true" : "false",
-        0.0f   // 溶解氧传感器暂未接入，上报占位值 0.0
+        sensorData.depthSensorOk ? "true" : "false"
     );
 
     // 组装完整 Payload
@@ -229,7 +228,7 @@ void mqttIntervalPost()
         client.endPublish();
     }
 
-    // LED 反馈：成功闪2次，失败闪1次长
+    // LED 反馈：成功闪2次，失败闪1次
     digitalWrite(LED_PIN, LOW);
     if (publishResult) {
         // 成功：快闪2次
@@ -254,7 +253,7 @@ void serialPrintData()
     Serial.print("\t\t");
     Serial.print(sensorData.turbidity);
     Serial.print("\t\t");
-    Serial.print(sensorData.ammonia, 2);
+    Serial.print(sensorData.dissolvedOxygen, 2);
     Serial.print("\t\t");
     Serial.print(sensorData.temperature, 1);
     Serial.print("\t\t");
@@ -289,7 +288,7 @@ void setup() {
 
     // 输出表头
     Serial.println("水质监测系统初始化完成");
-    Serial.println("pH值\tTDS值(ppm)\t浊度(ADC)\t氨氮(mg/L)\t水温(℃)\t深度(m)\t状态");
+    Serial.println("pH值\tTDS值(ppm)\t浊度(NTU)\t溶解氧(mg/L)\t水温(℃)\t深度(m)\t状态");
 }
 
 /* ========== loop ========== */

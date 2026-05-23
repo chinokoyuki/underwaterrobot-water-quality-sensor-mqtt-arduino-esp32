@@ -2,15 +2,15 @@
 
 > Arduino Nano ESP32 · 多参数水质监测 · 华为云 IoTDA MQTT 上报
 
-基于 **Arduino Nano ESP32** (ESP32-S3) 开发的水质多参数采集与云端上报系统，搭载 **pH / TDS / 浊度 / 氨氮 / DS18B20 水温 / MS5837 深度** 六合一传感器阵列，支持超标报警、板载 LED 状态指示与华为云 IoT 平台实时数据上报。
+基于 **Arduino Nano ESP32** (ESP32-S3) 开发的水质多参数采集与云端上报系统，搭载 **pH / TDS / 浊度 / 溶解氧 / DS18B20 水温 / MS5837 深度** 六合一传感器阵列，支持超标报警、板载 LED 状态指示与华为云 IoT 平台实时数据上报。
 
 ---
 
 ## 功能特性
 
-- **6 参数水质采集**：pH、TDS、浊度、氨氮、水温、深度
+- **6 参数水质采集**：pH、TDS、浊度、溶解氧、水温、深度
 - **深度传感器扩展**：MS5837 同时输出压力、温度、深度数据
-- **超标报警**：pH / TDS / 氨氮 / 深度超阈值自动触发蜂鸣器
+- **超标报警**：pH / TDS / 溶解氧 / 深度超阈值自动触发蜂鸣器
 - **云端上报**：MQTT v3.1.1 接入华为云 IoTDA，5 秒周期自动上报 11 个属性
 - **板载 LED 指示**：WiFi 连接闪烁、上报中常亮、成功双闪、失败长闪
 - **自动重连**：WiFi / MQTT 断线自动恢复，超时自动重启
@@ -47,8 +47,8 @@
 |--------|---------|---------|------|
 | pH 电极模块 | 酸碱度 (0-14) | 模拟输入 | A0 |
 | TDS 笔模块 | 溶解性固体 (ppm) | 模拟输入 | A1 |
-| 浊度传感器 | 水体浊度 (ADC) | 模拟输入 | A2 |
-| 氨氮传感器 | 氨氮浓度 (mg/L) | 模拟输入 | A3 |
+| 浊度传感器 | 水体浊度 (NTU) | 模拟输入 | A2 |
+| 溶解氧传感器 | 溶解氧浓度 (mg/L) | 模拟输入 | A3 |
 | DS18B20 | 水温 (℃) | 单总线 (OneWire) | A4 |
 | MS5837 | 深度 (m) / 压力 (mbar) | I2C | D8(SCL) / D9(SDA) |
 
@@ -66,21 +66,20 @@
 
 ### 华为云 IoTDA 物模型
 
-项目上报的 **service_id** 为 `WaterQuality`，包含以下 11 个属性：
+项目上报的 **service_id** 为 `water_quality`，包含以下 10 个属性：
 
 | 属性名 (物模型) | 中文名 | 数据类型 | 对应传感器 |
 |---|---|---|---|
-| `HydrogenIonConcentration` | pH 值 | float | pH 电极 |
-| `TotalDissolvedSolids` | TDS | float | TDS 模块 |
-| `Turbidity` | 浊度 | int | 浊度传感器 |
-| `AmmoniaNitrogen` | 氨氮 | float | 氨氮传感器 |
-| `Temperature` | 水温 | float | DS18B20 |
-| `Depth` | 深度 | float | MS5837 |
-| `DepthPressure` | 深度压力 | float | MS5837 |
-| `DepthSensorTemp` | 深度传感器温度 | float | MS5837 |
-| `WaterQualityNormal` | 水质是否正常 | boolean | 综合判断 |
-| `DepthSensorOnline` | 深度传感器在线 | boolean | MS5837 |
-| `DissolvedOxygen` | 溶解氧 | float | 暂未接入，占位 0.0 |
+| `pH` | pH 值 | float | pH 电极 |
+| `TDS` | TDS | float | TDS 模块 |
+| `turbidity` | 浊度 | float | 浊度传感器 |
+| `dissolvedOxygen` | 溶解氧 | float | 溶解氧传感器 |
+| `waterTemp` | 水温 | float | DS18B20 |
+| `depth` | 深度 | float | MS5837 |
+| `depthPressure` | 深度压力 | float | MS5837 |
+| `depthSensorTemp` | 深度传感器温度 | float | MS5837 |
+| `waterQualityNormal` | 水质是否正常 | boolean | 综合判断 |
+| `depthSensorOnline` | 深度传感器在线 | boolean | MS5837 |
 
 > 属性名必须与华为云 IoTDA 控制台物模型定义**完全一致**（含大小写），否则上报数据无法被平台识别。
 
@@ -92,19 +91,18 @@ Topic: $oc/devices/{DeviceId}/sys/properties/report
 Payload:
 {
   "services": [{
-    "service_id": "WaterQuality",
+    "service_id": "water_quality",
     "properties": {
-      "HydrogenIonConcentration": 7.00,
-      "TotalDissolvedSolids": 96.2,
-      "Turbidity": 3893,
-      "AmmoniaNitrogen": 0.25,
-      "Temperature": 25.0,
-      "Depth": 1.50,
-      "DepthPressure": 1013.0,
-      "DepthSensorTemp": 24.5,
-      "WaterQualityNormal": true,
-      "DepthSensorOnline": true,
-      "DissolvedOxygen": 0.0
+      "pH": 7.00,
+      "TDS": 96.2,
+      "turbidity": 15.32,
+      "dissolvedOxygen": 7.85,
+      "waterTemp": 25.0,
+      "depth": 1.50,
+      "depthPressure": 1013.0,
+      "depthSensorTemp": 24.5,
+      "waterQualityNormal": true,
+      "depthSensorOnline": true
     }
   }]
 }
@@ -129,7 +127,7 @@ Payload:
 ```
 src/
 ├── main.cpp                   # 主程序（WiFi / MQTT / 主循环 / LED 指示）
-├── WaterQualitySensor.h/cpp   # 水质传感器类（pH / TDS / 浊度 / 氨氮 / 水温 / 深度）
+├── WaterQualitySensor.h/cpp   # 水质传感器类（pH / TDS / 浊度 / 溶解氧 / 水温 / 深度）
 └── DepthSensor.h/cpp          # 深度传感器类（MS5837 I2C 驱动）
 
 main.cpp

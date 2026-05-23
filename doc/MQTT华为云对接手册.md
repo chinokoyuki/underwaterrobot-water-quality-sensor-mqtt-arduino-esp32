@@ -124,8 +124,8 @@
 |---|---|---|---|---|---|---|---|
 | pH值 | `pH` | decimal(浮点型) | 0 ~ 14 | 0.01 | — | 只读 | pH 酸碱度 |
 | TDS值 | `TDS` | decimal(浮点型) | 0 ~ 2000 | 0.1 | ppm | 只读 | 溶解性固体总量 |
-| 浊度 | `turbidity` | int(整数型) | 0 ~ 4095 | 1 | — | 只读 | ADC 原始值 |
-| 氨氮浓度 | `ammoniaNitrogen` | decimal(浮点型) | 0 ~ 50 | 0.01 | mg/L | 只读 | 氨氮含量 |
+| 浊度 | `turbidity` | decimal(浮点型) | 0 ~ 4095 | 0.01 | NTU | 只读 | 浊度值 |
+| 溶解氧 | `dissolvedOxygen` | decimal(浮点型) | 0 ~ 20 | 0.01 | mg/L | 只读 | 溶解氧浓度 |
 | 水温 | `waterTemp` | decimal(浮点型) | 0 ~ 100 | 0.1 | ℃ | 只读 | DS18B20 水温 |
 | 水深 | `depth` | decimal(浮点型) | 0 ~ 30 | 0.01 | m | 只读 | MS5837 深度 |
 | 深度压力 | `depthPressure` | decimal(浮点型) | 0 ~ 30000 | 0.1 | mbar | 只读 | 深度传感器压力 |
@@ -150,8 +150,8 @@
     "properties": [
       {"property_name": "pH值", "identifier": "pH", "data_type": "decimal", "range": [0, 14], "step": 0.01, "method": "R"},
       {"property_name": "TDS值", "identifier": "TDS", "data_type": "decimal", "range": [0, 2000], "step": 0.1, "unit": "ppm", "method": "R"},
-      {"property_name": "浊度", "identifier": "turbidity", "data_type": "int", "range": [0, 4095], "step": 1, "method": "R"},
-      {"property_name": "氨氮浓度", "identifier": "ammoniaNitrogen", "data_type": "decimal", "range": [0, 50], "step": 0.01, "unit": "mg/L", "method": "R"},
+      {"property_name": "浊度", "identifier": "turbidity", "data_type": "decimal", "range": [0, 4095], "step": 0.01, "unit": "NTU", "method": "R"},
+      {"property_name": "溶解氧", "identifier": "dissolvedOxygen", "data_type": "decimal", "range": [0, 20], "step": 0.01, "unit": "mg/L", "method": "R"},
       {"property_name": "水温", "identifier": "waterTemp", "data_type": "decimal", "range": [0, 100], "step": 0.1, "unit": "℃", "method": "R"},
       {"property_name": "水深", "identifier": "depth", "data_type": "decimal", "range": [0, 30], "step": 0.01, "unit": "m", "method": "R"},
       {"property_name": "深度压力", "identifier": "depthPressure", "data_type": "decimal", "range": [0, 30000], "step": 0.1, "unit": "mbar", "method": "R"},
@@ -335,8 +335,8 @@ $oc/devices/69632991c00ccb6d4b32b204_ABX00083_CN_1/sys/properties/report
     "properties": {
       "pH": 7.15,
       "TDS": 189.3,
-      "turbidity": 856,
-      "ammoniaNitrogen": 2.45,
+      "turbidity": 15.32,
+      "dissolvedOxygen": 7.85,
       "waterTemp": 24.8,
       "depth": 0.32,
       "depthPressure": 1013.5,
@@ -513,7 +513,7 @@ main.cpp
 readPH()            →      sensorData.ph          →    "pH"
 readTDS()           →      sensorData.tds         →    "TDS"
 readTurbidity()     →      sensorData.turbidity   →    "turbidity"
-readAmmoniaNitrogen() →    sensorData.ammonia     →    "ammoniaNitrogen"
+readDissolvedOxygen() →    sensorData.dissolvedOxygen →  "dissolvedOxygen"
 readTemperature()   →      sensorData.temperature →    "waterTemp"
 readDepth()         →      sensorData.depth       →    "depth"
 readDepthPressure() →      sensorData.depthPressure →  "depthPressure"
@@ -573,8 +573,8 @@ Payload:
     "properties": {
       "pH": 7.00,
       "TDS": 150.0,
-      "turbidity": 500,
-      "ammoniaNitrogen": 1.50,
+      "turbidity": 15.0,
+      "dissolvedOxygen": 7.50,
       "waterTemp": 25.0,
       "depth": 0.50,
       "depthPressure": 1013.25,
@@ -656,7 +656,7 @@ Payload:
 | `"pH"` | `pH` | ✅ |
 | `"TDS"` | `TDS` | ✅ |
 | `"turbidity"` | `turbidity` | ✅ |
-| `"ammoniaNitrogen"` | `ammoniaNitrogen` | ✅ |
+| `"dissolvedOxygen"` | `dissolvedOxygen` | ✅ |
 | `"waterTemp"` | `waterTemp` | ✅ |
 | `"depth"` | `depth` | ✅ |
 | `"depthPressure"` | `depthPressure` | ✅ |
@@ -725,8 +725,8 @@ Payload:
     "properties": {
       "pH": 7.15,
       "TDS": 189.3,
-      "turbidity": 856,
-      "ammoniaNitrogen": 2.45,
+      "turbidity": 15.32,
+      "dissolvedOxygen": 7.85,
       "waterTemp": 24.8,
       "depth": 0.32,
       "depthPressure": 1013.5,
@@ -743,8 +743,7 @@ Payload:
 - [ ] 华为云账号注册并实名认证
 - [ ] 开通 IoTDA 服务（选择区域）
 - [ ] 创建产品（协议=MQTT，数据格式=JSON）
-- [ ] 定义物模型（service_id=`water_quality`，10个属性）
-- [ ] 注册设备，获取 Device ID 和 Device Secret
+- [ ] 定义物模型（service_id=`water_quality`，10个属性）- [ ] 注册设备，获取 Device ID 和 Device Secret
 - [ ] 生成 MQTT 连接参数（ClientID/Username/Password）
 - [ ] 修改 main.cpp 中的连接参数
 - [ ] 编译烧录固件
